@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace BilletLibrary
 {
-    public class MC
+    public class MC : Køretøjer
     {
         //PROPERTIES
         public string NummerPlade { get; set; }
         public DateTime Dato { get; set; }
 
         //METHODS
-        public int Pris()
+        public override int Pris()
         {
             return 125;
         }
 
-        public string Køretøj()
+        public override string Køretøj()
         {
             return "MC";
         }
