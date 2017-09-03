@@ -36,7 +36,7 @@ namespace BilletLibrary
         {
             if (BroBizz)
             {
-                return GrundPris * 0.85;
+                return GrundPris * 0.95;
             }
             else
             {

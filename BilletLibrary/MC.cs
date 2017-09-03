@@ -14,11 +14,6 @@ namespace BilletLibrary
         }
 
         //METHODS
-        //public override double Pris()
-        //{
-        //    return 125;
-        //}
-
         public override string Køretøj()
         {
             return "MC";

@@ -14,11 +14,24 @@ namespace BilletLibrary
         }
 
         //METHODS
-        //public override double Pris()
-        //{
-        //    return 240;
-        //}
-
+        public override double Pris()
+        {
+            if (BroBizz)
+            {
+                if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    return GrundPris * 0.80;
+                }
+                else
+                {
+                    return GrundPris * 0.95;
+                }
+            }
+            else
+            {
+                return GrundPris;
+            }
+        }
         public override string Køretøj()
         {
             return "Bil";

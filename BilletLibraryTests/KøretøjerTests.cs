@@ -27,7 +27,7 @@ namespace BilletLibrary.Tests
             //Arrange & Act
             Bil bil = new Bil("AA12123", DateTime.Now, true);
             //Assert
-            Assert.AreEqual(204, bil.Pris());
+            Assert.AreEqual(228, bil.Pris());
         }
 
         [TestMethod()]
