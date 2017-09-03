@@ -15,7 +15,7 @@ namespace BilletLibrary.Tests
         public void PrisTestBil()
         {
             //Arrange
-            Bil bil = new Bil("AA12123", DateTime.Now);
+            Bil bil = new Bil("AA12123", DateTime.Now, false);
             //Act
             var pris = bil.Pris();
             //Assert
@@ -26,7 +26,7 @@ namespace BilletLibrary.Tests
         public void KøretøjTestBil()
         {
             //Arrange
-            Bil bil = new Bil("AA12123", DateTime.Now);
+            Bil bil = new Bil("AA12123", DateTime.Now, true);
             //Act
             var køretøj = bil.Køretøj();
             //Assert

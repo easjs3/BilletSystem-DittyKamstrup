@@ -8,16 +8,16 @@ namespace BilletLibrary
 {
     public class Bil : Køretøjer
     {
-        public Bil(string nummerPlade, DateTime dato) : base(nummerPlade, dato)
+        public Bil(string nummerPlade, DateTime dato, bool broBizz) : base(nummerPlade, dato, broBizz)
         {
-
+            GrundPris = 240;
         }
 
         //METHODS
-        public override int Pris()
-        {
-            return 240;
-        }
+        //public override double Pris()
+        //{
+        //    return 240;
+        //}
 
         public override string Køretøj()
         {
