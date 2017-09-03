@@ -8,9 +8,6 @@ namespace BilletLibrary
 {
     public class Bil : Køretøjer
     {
-        //PROPERTIES
-        public string NummerPlade { get; set; }
-        public DateTime Dato { get; set; }
 
         //METHODS
         public override int Pris()
