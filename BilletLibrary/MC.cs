@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 namespace BilletLibrary
 {
     public class MC : Køretøjer
-    { 
+    {
+        public MC(string nummerPlade, DateTime dato) : base(nummerPlade, dato)
+        {
+
+        }
+
         //METHODS
         public override int Pris()
         {

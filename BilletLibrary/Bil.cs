@@ -8,6 +8,10 @@ namespace BilletLibrary
 {
     public class Bil : Køretøjer
     {
+        public Bil(string nummerPlade, DateTime dato) : base(nummerPlade, dato)
+        {
+
+        }
 
         //METHODS
         public override int Pris()
