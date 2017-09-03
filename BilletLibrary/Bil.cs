@@ -8,33 +8,74 @@ namespace BilletLibrary
 {
     public class Bil : Køretøjer
     {
-        public Bil(string nummerPlade, DateTime dato, bool broBizz) : base(nummerPlade, dato, broBizz)
+        public Bil(string bro, string nummerPlade, DateTime dato, bool broBizz) : base(bro, nummerPlade, dato, broBizz)
         {
-            GrundPris = 240;
+            if (bro == "Storebælt")
+            {
+                GrundPris = 240;
+            }
+            else if (bro == "Øresund")
+            {
+                GrundPris = 410;
+            }
+            else
+            {
+                throw new ArgumentException("Dette er ikke en bro i systemet");
+            }
         }
 
         //METHODS
         public override double Pris()
         {
-            if (BroBizz)
+            if (Bro == "Storebælt")
             {
-                if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+                if (BroBizz)
                 {
-                    return GrundPris * 0.80;
+                    if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        return GrundPris * 0.80;
+                    }
+                    else
+                    {
+                        return GrundPris * 0.95;
+                    }
                 }
                 else
                 {
-                    return GrundPris * 0.95;
+                    return GrundPris;
+                }
+            }
+            else if (Bro == "Øresund")
+            {
+                if (BroBizz)
+                {
+                    GrundPris = 161;
+                    return GrundPris;
+                }
+                else
+                {
+                    return GrundPris;
                 }
             }
             else
             {
-                return GrundPris;
+                throw new ArgumentException("Dette er ikke en bro i systemet");
             }
         }
         public override string Køretøj()
         {
-            return "Bil";
+            if (Bro == "Storebælt")
+            {
+                return "Bil";
+            }
+            else if (Bro == "Øresund")
+            {
+                return "Øresund Bil";
+            }
+            else
+            {
+                throw new ArgumentException("Dette er ikke en bro i systemet");
+            }
         }
     }
 }

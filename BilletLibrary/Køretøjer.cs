@@ -9,14 +9,17 @@ namespace BilletLibrary
     public abstract class Køretøjer
     {
         //PROPERTIES
+        public string Bro { get; set; }
         public string NummerPlade { get; set; }
         public DateTime Dato { get; set; }
         public bool BroBizz { get; set; }
         public double GrundPris { get; set; }
 
+
         //CONSTRUCTOR
-        public Køretøjer(string nummerPlade, DateTime dato, bool broBizz)
+        public Køretøjer(string bro, string nummerPlade, DateTime dato, bool broBizz)
         {
+            Bro = bro;
             NummerPlade = nummerPlade;
             Dato = dato;
             BroBizz = broBizz;
@@ -34,7 +37,7 @@ namespace BilletLibrary
         //METHODS
         public virtual double Pris()
         {
-            if (BroBizz)
+            if (BroBizz && Bro == "Storebælt")
             {
                 return GrundPris * 0.95;
             }

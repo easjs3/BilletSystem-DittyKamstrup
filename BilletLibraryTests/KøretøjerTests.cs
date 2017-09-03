@@ -16,7 +16,7 @@ namespace BilletLibrary.Tests
         public void KøretøjerNummerPladeMax7TegnTest()
         {
             //Arrange & Act
-            Bil bil = new Bil("AA121234", DateTime.Now, true);
+            Bil bil = new Bil("Storebælt", "AA121234", DateTime.Now, true);
             //Assert
             //none
         }
@@ -25,7 +25,7 @@ namespace BilletLibrary.Tests
         public void PrisBrobizzTrueTest()
         {
             //Arrange & Act
-            Bil bil = new Bil("AA12123", DateTime.Now, true);
+            Bil bil = new Bil("Storebælt", "AA12123", DateTime.Now, true);
             //Assert
             Assert.AreEqual(228, bil.Pris());
         }
@@ -34,7 +34,7 @@ namespace BilletLibrary.Tests
         public void PrisBrobizzFalseTest()
         {
             //Arrange & Act
-            Bil bil = new Bil("AA12123", DateTime.Now, false);
+            Bil bil = new Bil("Storebælt", "AA12123", DateTime.Now, false);
             //Assert
             Assert.AreEqual(240, bil.Pris());
         }

@@ -8,15 +8,37 @@ namespace BilletLibrary
 {
     public class MC : Køretøjer
     {
-        public MC(string nummerPlade, DateTime dato, bool broBizz) : base(nummerPlade, dato, broBizz)
+        public MC(string bro, string nummerPlade, DateTime dato, bool broBizz) : base(bro, nummerPlade, dato, broBizz)
         {
-            GrundPris = 125;
+            if (bro == "Storebælt")
+            {
+                GrundPris = 125;
+            }
+            else if (bro == "Øresund")
+            {
+                GrundPris = 210;
+                if (broBizz)
+                {
+                    GrundPris = 73;
+                }
+            }
         }
 
         //METHODS
         public override string Køretøj()
         {
-            return "MC";
+            if (Bro == "Storebælt")
+            {
+                return "MC";
+            }
+            else if (Bro == "Øresund")
+            {
+                return "Øresund MC";
+            }
+            else
+            {
+                throw new ArgumentException("Dette er ikke en bro i systemet");
+            }
         }
     }
 }
