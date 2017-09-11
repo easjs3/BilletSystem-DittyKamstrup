@@ -8,6 +8,11 @@ namespace BilletLibrary
 {
     public class Bil : Køretøjer
     {
+
+        //som martin fortalte ville det være smart at oprette en øresundbill og øresundMC class
+        //det er det eneste ellers ser det sgu skide godt ud!
+
+
         public Bil(string bro, string nummerPlade, DateTime dato, bool broBizz) : base(bro, nummerPlade, dato, broBizz)
         {
             if (bro == "Storebælt")
